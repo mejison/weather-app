@@ -13,7 +13,7 @@ const ip = {
 }
 
 const locationByIp = {
-    host: "http://ip-api.com/json/"
+    host: "https://ip-api.com/json/"
 }
 
 const objectToQueryString = (object) => {
