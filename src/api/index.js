@@ -13,7 +13,7 @@ const ip = {
 }
 
 const locationByIp = {
-    host: "https://ip-api.com/json/"
+    host: "https://freeipapi.com"
 }
 
 const objectToQueryString = (object) => {
@@ -37,6 +37,6 @@ export default {
         return (await fetch(ip.host + `/?format=json`)).json() 
     },
     async getMyLocationByIp(ip = '') {
-        return (await fetch(locationByIp.host + ip)).json() 
+        return (await fetch(locationByIp.host + '/api/json/' + ip)).json() 
     },
 }

@@ -31,11 +31,11 @@
         api
             .getMyIp().then(data => {
             api.getMyLocationByIp(data?.ip)
-                .then(({ city, lat, lon }) => {
-                    state.cities[defaultIndex].city = city
-                    state.cities[defaultIndex].lat = lat
-                    state.cities[defaultIndex].lon = lon
-                    utils.getWeather(defaultIndex, lat, lon, state.cities[defaultIndex].mode).then(({ labels, temperature }) => {
+                .then(({ cityName, latitude, longitude }) => {
+                    state.cities[defaultIndex].city = cityName
+                    state.cities[defaultIndex].lat = latitude
+                    state.cities[defaultIndex].lon = longitude
+                    utils.getWeather(defaultIndex, latitude, longitude, state.cities[defaultIndex].mode).then(({ labels, temperature }) => {
                         state.cities[defaultIndex].labels = labels
                         state.cities[defaultIndex].temperature =  temperature
                         updateLocalState()
